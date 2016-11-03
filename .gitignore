@@ -11,5 +11,5 @@ target/
 .classpath
 /bin/
 
-gravitee-management-api-standalone/gravitee-management-api-standalone-distribution/src/main/resources/logs/*
-gravitee-management-api-standalone/gravitee-management-api-standalone-distribution/src/main/resources/plugins/*
+gravitee-am-gateway-standalone/gravitee-am-gateway-standalone-distribution/src/main/resources/plugins/*
+gravitee-am-gateway-standalone/gravitee-am-gateway-standalone-distribution/src/main/resources/logs/*

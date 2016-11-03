@@ -26,23 +26,31 @@
         <version>6</version>
     </parent>
 
-    <groupId>io.gravitee.oauth2</groupId>
-    <artifactId>gravitee-oauth2-server</artifactId>
+    <groupId>io.gravitee.am.gateway</groupId>
+    <artifactId>gravitee-am-gateway</artifactId>
     <packaging>pom</packaging>
 
     <version>0.0.1-SNAPSHOT</version>
-    <name>Gravitee IO - OAuth2 - Server</name>
+    <name>Gravitee IO - Access Management - Gateway</name>
 
     <properties>
         <gravitee-common.version>1.0.0</gravitee-common.version>
+        <gravitee-plugin-core.version>1.0.0</gravitee-plugin-core.version>
 
+        <spring-security.version>3.2.8.RELEASE</spring-security.version>
         <spring-security-oauth2.version>2.0.11.RELEASE</spring-security-oauth2.version>
+        <jackson.library>2.7.5</jackson.library>
         <jetty.version>9.3.14.v20161028</jetty.version>
     </properties>
 
     <modules>
-        <module>gravitee-oauth2-server-core</module>
-        <module>gravitee-oauth2-server-standalone</module>
+        <module>gravitee-am-gateway-core</module>
+        <module>gravitee-am-gateway-jetty</module>
+        <module>gravitee-am-gateway-repository</module>
+        <module>gravitee-am-gateway-standalone</module>
+        <module>gravitee-am-gateway-definition</module>
+        <module>gravitee-am-gateway-handlers</module>
+        <module>gravitee-am-gateway-services</module>
     </modules>
 
     <dependencyManagement>
@@ -52,6 +60,12 @@
                 <groupId>io.gravitee.common</groupId>
                 <artifactId>gravitee-common</artifactId>
                 <version>${gravitee-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.gravitee.plugin</groupId>
+                <artifactId>gravitee-plugin-core</artifactId>
+                <version>${gravitee-plugin-core.version}</version>
             </dependency>
 
             <!-- Spring -->

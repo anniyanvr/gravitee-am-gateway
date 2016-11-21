@@ -40,8 +40,6 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-    private static String REALM="realm-gravitee";
-
     @Autowired
     private Domain domain;
 

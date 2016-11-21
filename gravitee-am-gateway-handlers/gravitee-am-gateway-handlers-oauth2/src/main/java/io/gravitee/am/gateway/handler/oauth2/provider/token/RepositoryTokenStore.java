@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.am.gateway.handler.oauth2.token;
+package io.gravitee.am.gateway.handler.oauth2.provider.token;
 
 import io.gravitee.oauth2.repository.oauth2.api.TokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -30,7 +31,7 @@ import java.util.Collections;
  * @author GraviteeSource Team
  */
 @Component
-public class TokenStore implements org.springframework.security.oauth2.provider.token.TokenStore{
+public class RepositoryTokenStore implements TokenStore {
 
     @Autowired
     private TokenRepository tokenRepository;

@@ -62,11 +62,15 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anonymous().disable()
                 .httpBasic().authenticationEntryPoint(oAuth2AuthenticationEntryPoint)
                 .and()
-                .authorizeRequests()
-                .antMatchers("/oauth/check_token").authenticated()
-                .antMatchers("/oauth/**").permitAll() //.hasAnyRole("ROLE_USER")
-                .antMatchers("/**").permitAll()
-                .and().exceptionHandling().accessDeniedHandler(oAuth2AccessDeniedHandler);
+                    .authorizeRequests()
+                    .antMatchers("/oauth/check_token").authenticated()
+                    .antMatchers("/oauth/check_token").authenticated()
+                    .antMatchers("/oauth/**").permitAll() //.hasAnyRole("ROLE_USER")
+                    .antMatchers("/**").permitAll()
+                .and()
+                    .formLogin()
+                .and()
+                    .exceptionHandling().accessDeniedHandler(oAuth2AccessDeniedHandler);
     }
 
     @Override
@@ -77,7 +81,7 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     public TokenStore tokenStore() {
-        return new io.gravitee.am.gateway.handler.oauth2.token.TokenStore();
+        return new io.gravitee.am.gateway.handler.oauth2.provider.token.RepositoryTokenStore();
     }
 
     @Bean

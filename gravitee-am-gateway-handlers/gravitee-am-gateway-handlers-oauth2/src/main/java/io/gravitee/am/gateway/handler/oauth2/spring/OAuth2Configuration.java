@@ -18,6 +18,7 @@ package io.gravitee.am.gateway.handler.oauth2.spring;
 import io.gravitee.am.definition.Domain;
 import io.gravitee.am.gateway.handler.oauth2.AuthorizationServerConfiguration;
 import io.gravitee.am.gateway.handler.oauth2.OAuth2SecurityConfiguration;
+import io.gravitee.am.gateway.handler.oauth2.WebMvcConfiguration;
 import io.gravitee.am.gateway.handler.oauth2.provider.DomainBasedClientDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,6 +31,7 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
  */
 @Configuration
 @Import({
+        WebMvcConfiguration.class,
         AuthorizationServerConfiguration.class,
         OAuth2SecurityConfiguration.class
 })

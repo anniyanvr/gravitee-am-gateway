@@ -31,6 +31,7 @@ import org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHand
 import org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -61,7 +62,14 @@ public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
-            .formLogin();
+            .formLogin()
+            //    .loginPage("/login")
+            //    .defaultSuccessUrl("/oauth/authorize", true)
+            //    .failureUrl("/login?error=true")
+            //    .loginProcessingUrl("/do_login")
+                .permitAll()
+            .and().exceptionHandling()
+                .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"));
     }
 
     @Override

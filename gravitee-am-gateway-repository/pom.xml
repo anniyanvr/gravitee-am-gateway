@@ -31,22 +31,22 @@
     <name>Gravitee IO - Access Management - Gateway - Repository</name>
 
     <properties>
-        <gravitee-oauth2-repository-api.version>0.1.0-SNAPSHOT</gravitee-oauth2-repository-api.version>
-        <gravitee-oauth2-repository-mongodb.version>0.1.0-SNAPSHOT</gravitee-oauth2-repository-mongodb.version>
+        <gravitee-am-repository-api.version>0.1.0-SNAPSHOT</gravitee-am-repository-api.version>
+        <gravitee-am-repository-mongodb.version>0.1.0-SNAPSHOT</gravitee-am-repository-mongodb.version>
     </properties>
 
     <dependencies>
         <!-- Gravitee dependencies -->
         <dependency>
-            <groupId>io.gravitee.oauth2.repository</groupId>
-            <artifactId>gravitee-oauth2-repository-api</artifactId>
-            <version>${gravitee-oauth2-repository-api.version}</version>
+            <groupId>io.gravitee.am.repository</groupId>
+            <artifactId>gravitee-am-repository-api</artifactId>
+            <version>${gravitee-am-repository-api.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.gravitee.oauth2.repository</groupId>
-            <artifactId>gravitee-oauth2-repository-mongodb</artifactId>
-            <version>${gravitee-oauth2-repository-mongodb.version}</version>
+            <groupId>io.gravitee.am.repository</groupId>
+            <artifactId>gravitee-am-repository-mongodb</artifactId>
+            <version>${gravitee-am-repository-mongodb.version}</version>
         </dependency>
     </dependencies>
 </project>

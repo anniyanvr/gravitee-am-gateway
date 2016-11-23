@@ -15,7 +15,7 @@
  */
 package io.gravitee.am.gateway.repository.spring;
 
-import io.gravitee.oauth2.repository.mongodb.token.TokenRepositoryConfiguration;
+import io.gravitee.am.repository.mongodb.oauth2.token.TokenRepositoryConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
